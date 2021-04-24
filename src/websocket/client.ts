@@ -15,7 +15,7 @@ io.on("connect", (socket) => {
 
     socket.on("client_first_access", async (params) => {
         const socket_id = socket.id;
-        const { text, email } = params;
+        const { text, email } = params as IParams;
         let user_id = null;
 
         const userExists = await usersService.findByEmail(email);
